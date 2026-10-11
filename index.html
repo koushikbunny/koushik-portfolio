@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Koushik Jamboju is a creative freelancer from Telangana, India, offering video editing, social media design, photo editing, writing, and music production." />
+  <meta name="theme-color" content="#101010" />
+  <title>Koushik Jamboju — Creative Editor & Designer</title>
+  <style>
+    :root { --bg:#101010; --panel:#171717; --panel2:#1d1d1d; --text:#f4f1eb; --muted:#aaa7a1; --accent:#ff7043; --line:#303030; --max:1120px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:88px; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    a:focus-visible, button:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+    .wrap { width:min(calc(100% - 40px), var(--max)); margin-inline:auto; }
+    .topbar { position:sticky; top:0; z-index:5; background:rgba(16,16,16,.92); backdrop-filter:blur(14px); border-bottom:1px solid rgba(255,255,255,.08); }
+    nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { font-weight:850; letter-spacing:-.04em; font-size:1.08rem; }
+    .brand span { color:var(--accent); }
+    .navlinks { display:flex; gap:24px; align-items:center; color:var(--muted); font-size:.9rem; }
+    .navlinks a:hover { color:var(--text); }
+    .nav-cta, .button { display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--accent); background:var(--accent); color:#17110e; font-weight:800; border-radius:999px; padding:11px 18px; transition:transform .2s, background .2s; }
+    .nav-cta:hover, .button:hover { transform:translateY(-2px); background:#ff865f; }
+    .button.secondary { background:transparent; color:var(--text); border-color:#4a4a4a; }
+    .hero { padding:94px 0 76px; position:relative; overflow:hidden; }
+    .hero:before { content:""; position:absolute; width:430px; height:430px; right:-120px; top:-170px; border-radius:50%; background:radial-gradient(circle,rgba(255,112,67,.19),transparent 68%); pointer-events:none; }
+    .eyebrow { color:var(--accent); font-size:.78rem; letter-spacing:.17em; text-transform:uppercase; font-weight:850; }
+    h1 { max-width:850px; font-size:clamp(2.8rem,7vw,5.8rem); line-height:.99; letter-spacing:-.065em; margin:20px 0 24px; }
+    h1 .accent { color:var(--accent); }
+    .hero-copy { max-width:650px; color:var(--muted); font-size:clamp(1rem,2vw,1.16rem); }
+    .hero-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
+    .hero-meta { display:flex; gap:26px; flex-wrap:wrap; color:var(--muted); font-size:.88rem; margin-top:40px; }
+    .hero-meta strong { color:var(--text); font-weight:700; }
+    section { padding:76px 0; border-top:1px solid var(--line); }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:30px; }
+    h2 { font-size:clamp(2rem,4vw,3.2rem); line-height:1.05; letter-spacing:-.05em; margin:8px 0 0; }
+    .section-head p { max-width:470px; color:var(--muted); margin:0; }
+    .work-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .work-card { min-height:250px; border:1px solid var(--line); border-radius:18px; padding:22px; background:linear-gradient(145deg,#1d1d1d,#131313); display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; position:relative; }
+    .work-card:after { content:""; position:absolute; width:180px; height:180px; right:-70px; top:-70px; border:1px solid rgba(255,112,67,.24); border-radius:50%; box-shadow:0 0 0 24px rgba(255,112,67,.025),0 0 0 48px rgba(255,112,67,.02); }
+    .work-icon { width:46px; height:46px; display:grid; place-items:center; border-radius:13px; color:var(--accent); background:rgba(255,112,67,.11); font-size:1.35rem; font-weight:900; }
+    .work-card h3 { font-size:1.35rem; margin:28px 0 5px; letter-spacing:-.03em; }
+    .work-card p { color:var(--muted); margin:0; font-size:.92rem; }
+    .work-card small { color:#777; margin-top:22px; display:block; }
+    .service-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+    .service { border:1px solid var(--line); background:var(--panel); border-radius:16px; padding:23px; }
+    .service .num { color:var(--accent); font-size:.8rem; font-weight:850; letter-spacing:.1em; }
+    .service h3 { margin:12px 0 7px; font-size:1.12rem; }
+    .service p { margin:0; color:var(--muted); font-size:.92rem; }
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:42px; align-items:start; }
+    .about-copy { color:var(--muted); max-width:620px; }
+    .about-copy strong { color:var(--text); }
+    .toolbox { display:flex; flex-wrap:wrap; gap:9px; margin-top:24px; }
+    .toolbox span { border:1px solid #393939; background:#191919; color:#ddd8d1; border-radius:999px; padding:8px 12px; font-size:.86rem; }
+    .about-note { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:26px; }
+    .about-note h3 { margin:0 0 10px; }
+    .about-note p { margin:0; color:var(--muted); }
+    .contact-panel { border:1px solid #39312d; border-radius:24px; padding:clamp(26px,5vw,54px); background:radial-gradient(ellipse at top right,rgba(255,112,67,.13),transparent 50%),#171615; display:flex; justify-content:space-between; align-items:center; gap:28px; }
+    .contact-panel h2 { max-width:620px; }
+    .contact-panel p { color:var(--muted); max-width:580px; }
+    .contact-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:24px; }
+    footer { padding:26px 0 38px; color:#85817b; font-size:.84rem; }
+    .footer-row { display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+    .notice { color:#b6b1a9; font-size:.85rem; margin-top:18px; }
+    @media (max-width:760px) { .navlinks { gap:12px; font-size:.82rem; } .nav-cta { display:none; } .hero { padding:70px 0 58px; } section { padding:58px 0; } .section-head { display:block; } .section-head p { margin-top:14px; } .work-grid,.service-grid { grid-template-columns:1fr 1fr; } .about-grid { grid-template-columns:1fr; gap:22px; } .contact-panel { display:block; } }
+    @media (max-width:500px) { .wrap { width:min(calc(100% - 28px),var(--max)); } nav { min-height:64px; } .navlinks { gap:10px; } .navlinks a:nth-child(2) { display:none; } .work-grid,.service-grid { grid-template-columns:1fr; } .work-card { min-height:210px; } .hero-meta { gap:12px 20px; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*:before,*:after { transition:none !important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">KOUSHIK<span>.</span></a>
+      <div class="navlinks"><a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+      <a class="nav-cta" href="#contact">Let's work together ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home" style="border-top:0">
+      <div class="wrap">
+        <div class="eyebrow">Creative freelancer · Telangana, India</div>
+        <h1>Ideas into <span class="accent">visuals.</span><br>Stories into impact.</h1>
+        <p class="hero-copy">I'm Koushik Jamboju, a creative freelancer working across video editing, social media design, photo editing, writing, and music. I help turn rough ideas into clear, engaging creative work.</p>
+        <div class="hero-actions"><a class="button" href="#work">Explore my work ↓</a><a class="button secondary" href="#contact">Contact me ↗</a></div>
+        <div class="hero-meta"><span><strong>Based in</strong> Telangana, India</span><span><strong>Available for</strong> Remote projects</span><span><strong>Focus</strong> Video · Design · Creative</span></div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">Selected work</div><h2>My creative playground.</h2></div><p>This section is ready for your real projects. Add your best work when you're ready; no need to finish everything before publishing your site.</p></div>
+        <div class="work-grid">
+          <article class="work-card"><div><div class="work-icon">▶</div><h3>Video Editing</h3><p>Short-form edits, storytelling, pacing, and cinematic touches.</p></div><small>PROJECTS COMING SOON</small></article>
+          <article class="work-card"><div><div class="work-icon">▧</div><h3>Posters & Thumbnails</h3><p>Visuals designed to catch attention and communicate fast.</p></div><small>PROJECTS COMING SOON</small></article>
+          <article class="work-card"><div><div class="work-icon">✳</div><h3>Photo Editing</h3><p>Color, mood, retouching, and creative image treatments.</p></div><small>PROJECTS COMING SOON</small></article>
+        </div>
+        <p class="notice">Tip: Replace these placeholder cards with your own images, project titles, and short descriptions when you're ready.</p>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">What I can do</div><h2>Creative services.</h2></div><p>Clear, practical creative support for creators, small businesses, and people with ideas worth sharing.</p></div>
+        <div class="service-grid">
+          <article class="service"><div class="num">01 / VIDEO</div><h3>Video Editing</h3><p>Editing for YouTube videos, promos, storytelling, and online content.</p></article>
+          <article class="service"><div class="num">02 / SHORT-FORM</div><h3>Reels & Shorts</h3><p>Vertical videos with clean pacing, captions when needed, and platform-ready framing.</p></article>
+          <article class="service"><div class="num">03 / DESIGN</div><h3>Posters & Thumbnails</h3><p>Social posts, promotional posters, and YouTube thumbnail design.</p></article>
+          <article class="service"><div class="num">04 / PHOTO</div><h3>Photo Editing</h3><p>Color correction, creative edits, and image cleanup.</p></article>
+          <article class="service"><div class="num">05 / WRITING</div><h3>Scripts & Content</h3><p>Video scripts, content ideas, and written material for digital platforms.</p></article>
+          <article class="service"><div class="num">06 / MUSIC</div><h3>Beat-making & Lyrics</h3><p>Basic beat production and lyric writing for creative music projects.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about-grid">
+        <div><div class="eyebrow">A little about me</div><h2>Creative thinking.<br>Hands-on making.</h2><div class="about-copy"><p>I'm <strong>Koushik Jamboju</strong>, a creative freelancer from Telangana, India. I work across editing, design, writing, and music, and I enjoy finding the right way to tell a story through visuals and sound.</p><p>I use a practical, collaborative approach: understand the brief, make the work, listen to feedback, and refine the result. I'm open to remote projects and creative collaborations.</p></div></div>
+        <aside class="about-note"><h3>Tools I work with</h3><p>My current creative toolkit includes:</p><div class="toolbox"><span>DaVinci Resolve</span><span>Adobe Premiere Pro</span><span>Canva</span><span>Adobe Photoshop</span><span>FL Studio</span></div><p class="notice">Tools are part of the process. The goal is work that serves the project.</p></aside>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap"><div class="contact-panel"><div><div class="eyebrow">Have a project in mind?</div><h2>Let's make something worth watching.</h2><p>Tell me what you're working on, what you need, and your timeline. I'll get back to you so we can discuss the project.</p><div class="contact-actions"><a class="button" href="mailto:bunnykoushik60@gmail.com?subject=Freelance%20project%20enquiry">Email me ↗</a><a class="button secondary" href="https://wa.me/918712297416" target="_blank" rel="noopener noreferrer">WhatsApp me ↗</a></div></div></div></div>
+    </section>
+  </main>
+
+  <footer><div class="wrap footer-row"><span>© <span id="year">2026</span> Koushik Jamboju. All rights reserved.</span><span>Made with care in Telangana, India.</span></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
